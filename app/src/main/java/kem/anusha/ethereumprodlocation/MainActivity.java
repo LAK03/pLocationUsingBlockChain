@@ -234,7 +234,12 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String rfIdCnt) {
             super.onPostExecute(rfIdCnt);
           //  progressBar.setVisibility(View.INVISIBLE);
-            callGetDetails(rfIdCnt);
+            if(Integer.parseInt(rfIdCnt) > 0)
+                callGetDetails(rfIdCnt);
+            else
+            {
+                tv.setText(" No Locations added to Block Chain with RFID "+productRfId);
+            }
         }
     }
 
